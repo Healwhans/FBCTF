@@ -1,0 +1,9 @@
+# We use language generic because that's the only thing that's supported for the
+# trusty distro
+language: generic
+sudo: required
+dist: trusty
+
+install: ./extra/provision.sh -m dev -s $TRAVIS_BUILD_DIR -d $TRAVIS_BUILD_DIR
+
+script: ./extra/run_tests.sh $TRAVIS_BUILD_DIR
